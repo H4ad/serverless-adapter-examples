@@ -12,14 +12,14 @@
     "build:express:huawei:http-api-gateway": "webpack --config webpack.express.huawei.http-api-gateway.js",
     "build:express:huawei:event-api-gateway": "webpack --config webpack.express.huawei.event-api-gateway.js",
     "deploy:huawei:bootstrap": "echo 'node /opt/function/code/index.js' > dist/bootstrap",
-    "deploy:zip": "rm deploy.zip && zip deploy.zip -j dist/*"
+    "deploy:zip": "rm -f deploy.zip && zip deploy.zip -j dist/*"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/H4ad/serverless-adapter-examples.git"
   },
   "dependencies": {
-    "@h4ad/serverless-adapter": "file:h4ad-serverless-adapter-0.0.0-development.tgz",
+    "@h4ad/serverless-adapter": "^2.3.0",
     "dotenv": "^10.0.0",
     "esbuild-loader": "^2.15.1",
     "express": "^4.17.1",
