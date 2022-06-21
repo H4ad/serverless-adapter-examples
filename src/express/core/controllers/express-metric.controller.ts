@@ -1,7 +1,7 @@
 // #region Imports
 
 import express from 'express';
-import { MetricService } from '../../core/services/metric.service';
+import { MetricService } from '../../../core/services/metric.service';
 
 // #endregion
 

@@ -1,4 +1,4 @@
-import { ExpressMetricController } from '../controllers/express-metric.controller';
+import { ExpressMetricController } from './controllers/express-metric.controller';
 
 // tslint:disable-next-line:no-var-requires
 require('dotenv').config();
