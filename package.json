@@ -14,6 +14,10 @@
     "build:fastify:aws:api-gateway-v2": "webpack --config webpack.fastify.aws.api-gateway-v2.js",
     "build:fastify:huawei:http-api-gateway": "webpack --config webpack.fastify.huawei.http-api-gateway.js",
     "build:fastify:huawei:event-api-gateway": "webpack --config webpack.fastify.huawei.event-api-gateway.js",
+    "build:trpc:aws:api-gateway-v2": "webpack --config webpack.trpc.aws.api-gateway-v2.js",
+    "build:trpc:aws:api-gateway-v2-and-sqs": "webpack --config webpack.trpc.aws.api-gateway-v2-and-sqs.js",
+    "build:trpc:huawei:http-api-gateway": "webpack --config webpack.trpc.huawei.http-api-gateway.js",
+    "build:trpc:huawei:event-api-gateway": "webpack --config webpack.trpc.huawei.event-api-gateway.js",
     "deploy:huawei:bootstrap": "echo 'node /opt/function/code/index.js' > dist/bootstrap",
     "deploy:zip": "rm -f deploy.zip && zip deploy.zip -j dist/*"
   },
@@ -22,12 +26,15 @@
     "url": "git+https://github.com/H4ad/serverless-adapter-examples.git"
   },
   "dependencies": {
-    "@h4ad/serverless-adapter": "file:h4ad-serverless-adapter-0.0.0-development.tgz",
+    "@h4ad/serverless-adapter": "2.4.0",
+    "@trpc/server": "^9.25.3",
+    "@types/aws-lambda": "^8.10.101",
     "dotenv": "^10.0.0",
     "esbuild-loader": "^2.15.1",
     "express": "^4.17.1",
     "fastify": "^4.0.3",
-    "nanoid": "^3.1.28"
+    "nanoid": "^3.1.28",
+    "zod": "^3.17.3"
   },
   "devDependencies": {
     "@types/express": "^4.17.13",

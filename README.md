@@ -49,3 +49,27 @@ Just a repository with express and huawei event sources to show how to integrate
   - Run `npm run build:express:huawei:event-api-gateway`
   - Then generate zip with: `npm run deploy:zip`.
   - With zip, just upload inside your lambda.
+
+## tRPC
+
+### AWS
+
+- [Api Gateway V2](src/trpc/aws/api-gateway-v2.entry.ts)
+  To deploy:
+  - Run `npm run build:fastify:aws:api-gateway-v2`.
+  - Then generate zip with: `npm run deploy:zip`.
+  - With zip, just upload inside your lambda.
+
+### Huawei
+
+- [Http Function](src/trpc/huawei/http-api-gateway.entry.ts)
+  To deploy:
+  - Run `npm run build:express:huawei:http-api-gateway`
+  - Then generate zip with: `npm run deploy:zip`.
+  - With zip, just upload inside your lambda.
+
+- [Event Function with Api Gateway](src/trpc/huawei/event-api-gateway.entry.ts)
+  To deploy:
+  - Run `npm run build:express:huawei:event-api-gateway`
+  - Then generate zip with: `npm run deploy:zip`.
+  - With zip, just upload inside your lambda.
