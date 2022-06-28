@@ -60,6 +60,12 @@ Just a repository with express and huawei event sources to show how to integrate
   - Then generate zip with: `npm run deploy:zip`.
   - With zip, just upload inside your lambda.
 
+- [Api Gateway V2 and SQS](src/trpc/aws/api-gateway-v2-and-sqs.entry.ts)
+  To deploy:
+  - Run `npm run build:fastify:aws:api-gateway-v2-and-sqs`.
+  - Then generate zip with: `npm run deploy:zip`.
+  - With zip, just upload inside your lambda.
+
 ### Huawei
 
 - [Http Function](src/trpc/huawei/http-api-gateway.entry.ts)
