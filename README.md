@@ -50,6 +50,10 @@ Just a repository with express and huawei event sources to show how to integrate
   - Then generate zip with: `npm run deploy:zip`.
   - With zip, just upload inside your lambda.
 
+### Azure
+
+You can see the docs about the example [here](./src/express/azure).
+
 ## tRPC
 
 ### AWS
@@ -79,3 +83,7 @@ Just a repository with express and huawei event sources to show how to integrate
   - Run `npm run build:express:huawei:event-api-gateway`
   - Then generate zip with: `npm run deploy:zip`.
   - With zip, just upload inside your lambda.
+
+### Azure
+
+You can see the docs about the example [here](./src/trpc/azure).
