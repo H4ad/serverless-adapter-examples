@@ -26,6 +26,10 @@ Just a repository with express and huawei event sources to show how to integrate
   - Then generate zip with: `npm run deploy:zip`.
   - With zip, just upload inside your lambda.
 
+### Firebase
+
+You can see the docs about the example [here](./src/fastify/firebase).
+
 ## Express
 
 ### AWS
@@ -53,6 +57,10 @@ Just a repository with express and huawei event sources to show how to integrate
 ### Azure
 
 You can see the docs about the example [here](./src/express/azure).
+
+### Firebase
+
+You can see the docs about the example [here](./src/express/firebase).
 
 ## tRPC
 
@@ -87,3 +95,7 @@ You can see the docs about the example [here](./src/express/azure).
 ### Azure
 
 You can see the docs about the example [here](./src/trpc/azure).
+
+### Firebase
+
+You can see the docs about the example [here](./src/trpc/firebase).
