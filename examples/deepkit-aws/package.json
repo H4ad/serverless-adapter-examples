@@ -1,0 +1,35 @@
+{
+  "name": "deepkit-aws",
+  "version": "1.0.0",
+  "main": "index.js",
+  "author": "Vinícius Lourenço",
+  "license": "MIT",
+  "description": "Example project for deepkit and AWS",
+  "config": {
+    "aws_profile": "aws_liga",
+    "aws_region": "us-east-1",
+    "aws_lambda_name": "aws_liga_test_lambda"
+  },
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsc -p tsconfig.json",
+    "start": "ts-node src/app.ts server:start",
+    "zip": "npx @h4ad/node-modules-packer ./ --include dist --peer --ignore-node-path faker typescript @deepkit/framework-debug-gui @deepkit/orm-browser-gui @deepkit/api-console-gui",
+    "update-function-code": "aws --profile $npm_package_config_aws_profile --region $npm_package_config_aws_region lambda update-function-code --function-name $npm_package_config_aws_lambda_name --zip-file fileb://deploy.zip --publish --cli-connect-timeout 6000",
+    "deploy": "npm run build && npm run zip && npm run update-function-code"
+  },
+  "dependencies": {
+    "@deepkit/app": "^1.0.1-alpha.75",
+    "@deepkit/core": "^1.0.1-alpha.75",
+    "@deepkit/event": "^1.0.1-alpha.75",
+    "@deepkit/framework": "^1.0.1-alpha.75",
+    "@deepkit/http": "^1.0.1-alpha.75",
+    "@deepkit/type": "^1.0.1-alpha.75",
+    "@h4ad/serverless-adapter": "file:../../../serverless-adapter/h4ad-serverless-adapter-0.0.0-development.tgz"
+  },
+  "devDependencies": {
+    "@deepkit/type-compiler": "^1.0.1-alpha.75",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.9.1"
+  }
+}
