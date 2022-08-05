@@ -25,7 +25,7 @@
     "@deepkit/framework": "^1.0.1-alpha.75",
     "@deepkit/http": "^1.0.1-alpha.75",
     "@deepkit/type": "^1.0.1-alpha.75",
-    "@h4ad/serverless-adapter": "file:../../../serverless-adapter/h4ad-serverless-adapter-0.0.0-development.tgz"
+    "@h4ad/serverless-adapter": "*"
   },
   "devDependencies": {
     "@deepkit/type-compiler": "^1.0.1-alpha.75",
