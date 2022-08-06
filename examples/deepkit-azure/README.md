@@ -1,6 +1,6 @@
 # Deepkit on Azure
 
-See above how to develop and deploy to Azure Functions.
+See above how to develop for Azure Functions.
 
 ## Development
 
