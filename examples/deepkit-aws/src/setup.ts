@@ -6,7 +6,6 @@ export function createApp() {
   const app = new App({
     controllers: [],
     imports: [
-      new HttpModule(),
       new FrameworkModule(),
     ],
   });

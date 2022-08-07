@@ -1,6 +1,6 @@
 import { App } from '@deepkit/app';
 import { FrameworkModule } from '@deepkit/framework';
-import { HtmlResponse, HttpKernel, HttpModule, HttpQuery, HttpRouterRegistry } from '@deepkit/http';
+import { HtmlResponse, HttpKernel, HttpQuery, HttpRouterRegistry } from '@deepkit/http';
 import { ServerlessAdapter } from '@h4ad/serverless-adapter';
 import { HttpTriggerV4Adapter } from '@h4ad/serverless-adapter/lib/adapters/azure';
 import { HttpDeepkitFramework } from '@h4ad/serverless-adapter/lib/frameworks/deepkit';
@@ -10,8 +10,7 @@ import { PromiseResolver } from '@h4ad/serverless-adapter/lib/resolvers/promise'
 const app = new App({
   controllers: [],
   imports: [
-    new HttpModule({ debug: true }),
-    new FrameworkModule({ debug: true, httpLog: true }),
+    new FrameworkModule(),
   ],
 });
 

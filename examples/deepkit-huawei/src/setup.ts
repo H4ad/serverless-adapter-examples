@@ -1,12 +1,11 @@
 import { App } from '@deepkit/app';
 import { FrameworkModule } from '@deepkit/framework';
-import { HtmlResponse, HttpModule, HttpQuery, HttpRouterRegistry } from '@deepkit/http';
+import { HtmlResponse, HttpQuery, HttpRouterRegistry } from '@deepkit/http';
 
 export function createApp() {
   const app = new App({
     controllers: [],
     imports: [
-      new HttpModule(),
       new FrameworkModule(),
     ],
   });
