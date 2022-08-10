@@ -1,0 +1,33 @@
+{
+  "name": "trpc-aws",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "author": "Vinícius Lourenço",
+  "license": "MIT",
+  "description": "Example project for tRPC and AWS",
+  "config": {
+    "aws_profile": "aws_liga",
+    "aws_region": "us-east-1",
+    "aws_lambda_name": "aws_liga_test_lambda"
+  },
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsc -p tsconfig.build.json",
+    "start": "nodemon src/run.ts",
+    "zip": "npx @h4ad/node-modules-packer ./ --include dist",
+    "update-function-code": "aws --profile $npm_package_config_aws_profile --region $npm_package_config_aws_region lambda update-function-code --function-name $npm_package_config_aws_lambda_name --zip-file fileb://deploy.zip --publish --cli-connect-timeout 6000",
+    "deploy": "npm run build && npm run zip && npm run update-function-code"
+  },
+  "dependencies": {
+    "@h4ad/serverless-adapter": "^2",
+    "@trpc/server": "^9.27.0",
+    "zod": "^3.18.0"
+  },
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.101",
+    "nodemon": "^2.0.19",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.7.4"
+  }
+}
