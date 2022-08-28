@@ -1,0 +1,28 @@
+{
+  "name": "deepkit-huawei",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "author": "Vinícius Lourenço",
+  "license": "MIT",
+  "description": "Example project for deepkit and Huawei",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "tsc -p tsconfig.json",
+    "start": "ts-node src/app.ts server:start",
+    "zip": "npx @h4ad/node-modules-packer ./ --include dist --peer --ignore-node-path faker typescript @deepkit/framework-debug-gui @deepkit/orm-browser-gui @deepkit/api-console-gui"
+  },
+  "dependencies": {
+    "@deepkit/app": "^1.0.1-alpha.75",
+    "@deepkit/core": "^1.0.1-alpha.75",
+    "@deepkit/event": "^1.0.1-alpha.75",
+    "@deepkit/framework": "^1.0.1-alpha.75",
+    "@deepkit/http": "^1.0.1-alpha.75",
+    "@deepkit/type": "^1.0.1-alpha.75",
+    "@h4ad/serverless-adapter": "^2"
+  },
+  "devDependencies": {
+    "@deepkit/type-compiler": "^1.0.1-alpha.75",
+    "rimraf": "^3.0.2",
+    "ts-node": "^10.9.1"
+  }
+}

@@ -1,101 +1,13 @@
-# Serverless Adapter Example Project
+# Serverless Adapter Examples
 
-Just a repository with express and huawei event sources to show how to integrate with [@h4ad/serverless-adapter](https://github.com/H4ad/serverless-adapter)
+In the repository, you will find examples of how to deploy and integrate with frameworks and cloud supported by [serverless-adapter](https://viniciusl.com.br/serverless-adapter/).
 
-## Fastify
-
-### AWS
-
-- [Api Gateway V2](src/fastify/aws/api-gateway-v2.entry.ts)
-  To deploy:
-  - Run `npm run build:fastify:aws:api-gateway-v2`.
-  - Then generate zip with: `npm run deploy:zip`.
-  - With zip, just upload inside your lambda.
-
-### Huawei
-
-- [Http Function](src/fastify/huawei/http-api-gateway.entry.ts)
-  To deploy:
-  - Run `npm run build:fastify:huawei:http-api-gateway`.
-  - Then generate zip with: `npm run deploy:zip`.
-  - With zip, just upload inside your lambda.
-
-- [Event Function with Api Gateway](src/fastify/huawei/event-api-gateway.entry.ts)
-  To deploy:
-  - Run `npm run build:fastify:huawei:event-api-gateway`.
-  - Then generate zip with: `npm run deploy:zip`.
-  - With zip, just upload inside your lambda.
-
-### Firebase
-
-You can see the docs about the example [here](./src/fastify/firebase).
-
-## Express
-
-### AWS
-
-- [Api Gateway V2](src/express/aws/api-gateway-v2.entry.ts)
-  To deploy:
-  - Run `npm run build:fastify:aws:api-gateway-v2`.
-  - Then generate zip with: `npm run deploy:zip`.
-  - With zip, just upload inside your lambda.
-
-### Huawei
-
-- [Http Function](src/express/huawei/http-api-gateway.entry.ts)
-  To deploy:
-  - Run `npm run build:express:huawei:http-api-gateway`
-  - Then generate zip with: `npm run deploy:zip`.
-  - With zip, just upload inside your lambda.
-
-- [Event Function with Api Gateway](src/express/huawei/event-api-gateway.entry.ts)
-  To deploy:
-  - Run `npm run build:express:huawei:event-api-gateway`
-  - Then generate zip with: `npm run deploy:zip`.
-  - With zip, just upload inside your lambda.
-
-### Azure
-
-You can see the docs about the example [here](./src/express/azure).
-
-### Firebase
-
-You can see the docs about the example [here](./src/express/firebase).
-
-## tRPC
-
-### AWS
-
-- [Api Gateway V2](src/trpc/aws/api-gateway-v2.entry.ts)
-  To deploy:
-  - Run `npm run build:fastify:aws:api-gateway-v2`.
-  - Then generate zip with: `npm run deploy:zip`.
-  - With zip, just upload inside your lambda.
-
-- [Api Gateway V2 and SQS](src/trpc/aws/api-gateway-v2-and-sqs.entry.ts)
-  To deploy:
-  - Run `npm run build:fastify:aws:api-gateway-v2-and-sqs`.
-  - Then generate zip with: `npm run deploy:zip`.
-  - With zip, just upload inside your lambda.
-
-### Huawei
-
-- [Http Function](src/trpc/huawei/http-api-gateway.entry.ts)
-  To deploy:
-  - Run `npm run build:express:huawei:http-api-gateway`
-  - Then generate zip with: `npm run deploy:zip`.
-  - With zip, just upload inside your lambda.
-
-- [Event Function with Api Gateway](src/trpc/huawei/event-api-gateway.entry.ts)
-  To deploy:
-  - Run `npm run build:express:huawei:event-api-gateway`
-  - Then generate zip with: `npm run deploy:zip`.
-  - With zip, just upload inside your lambda.
-
-### Azure
-
-You can see the docs about the example [here](./src/trpc/azure).
-
-### Firebase
-
-You can see the docs about the example [here](./src/trpc/firebase).
+| Framework | Cloud        | Source                                                           | Documentation                                                                                                                                                                 |
+|-----------|--------------|------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Deepkit   | AWS          | [examples/deepkit-aws](./examples/deepkit-aws)                   | [Deepkit](https://viniciusl.com.br/serverless-adapter/docs/main/frameworks/deepkit) and [AWS](https://viniciusl.com.br/serverless-adapter/docs/category/aws)                  |
+| Deepkit   | Azure        | [examples/deepkit-azure](./examples/deepkit-azure)               | [Deepkit](https://viniciusl.com.br/serverless-adapter/docs/main/frameworks/deepkit) and [Azure](https://viniciusl.com.br/serverless-adapter/docs/main/handlers/azure)         |
+| Deepkit   | Huawei       | [examples/deepkit-huawei](./examples/deepkit-huawei)             | [Deepkit](https://viniciusl.com.br/serverless-adapter/docs/main/frameworks/deepkit) and [Huawei](https://viniciusl.com.br/serverless-adapter/docs/main/handlers/huawei)       |
+| Deepkit   | Firebase     | [examples/deepkit-firebase](./examples/deepkit-firebase)         | [Deepkit](https://viniciusl.com.br/serverless-adapter/docs/main/frameworks/deepkit) and [Firebase](https://viniciusl.com.br/serverless-adapter/docs/main/handlers/firebase)   |
+| tRPC      | AWS          | [examples/trpc-aws](./examples/trpc-aws)                         | [tRPC](https://viniciusl.com.br/serverless-adapter/docs/main/frameworks/trpc) and [AWS](https://viniciusl.com.br/serverless-adapter/docs/category/aws)                        |
+| tRPC      | DigitalOcean | [examples/trpc-digital-ocean](./examples/trpc-digital-ocean)     | [tRPC](https://viniciusl.com.br/serverless-adapter/docs/main/frameworks/trpc) and [DigitalOcean](https://viniciusl.com.br/serverless-adapter/docs/handlers/digital-ocean)     |
+| NestJS    | DigitalOcean | [examples/nestjs-digital-ocean](./examples/nestjs-digital-ocean) | [NestJS](https://viniciusl.com.br/serverless-adapter/docs/main/frameworks/nestjs) and [DigitalOcean](https://viniciusl.com.br/serverless-adapter/docs/handlers/digital-ocean) |

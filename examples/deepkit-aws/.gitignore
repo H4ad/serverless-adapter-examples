@@ -1,0 +1,6 @@
+node_modules
+var
+dist
+
+deploy.zip
+tsconfig.tsbuildinfo
