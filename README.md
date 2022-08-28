@@ -2,6 +2,9 @@
 
 In the repository, you will find examples of how to deploy and integrate with frameworks and cloud supported by [serverless-adapter](https://viniciusl.com.br/serverless-adapter/).
 
+> Serverless adapter supports more frameworks, but I'm still working on creating examples, this thing takes a lot of time.
+> If you want to know how to integrate with a specific framework that I haven't given an example of yet, please create a issue and I can help you.
+
 | Framework | Cloud        | Source                                                           | Documentation                                                                                                                                                                 |
 |-----------|--------------|------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Deepkit   | AWS          | [examples/deepkit-aws](./examples/deepkit-aws)                   | [Deepkit](https://viniciusl.com.br/serverless-adapter/docs/main/frameworks/deepkit) and [AWS](https://viniciusl.com.br/serverless-adapter/docs/category/aws)                  |
