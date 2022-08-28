@@ -11,11 +11,8 @@ export const appRouter = trpc
   .router<TrpcContext>()
   .transformer(new BufferToJSObjectTransformer())
   .query('getUser', {
-    input: z.string(),
-    async resolve(req) {
-      console.log(req.input); // string
-
-      return { id: req.input, name: 'Bilbo' };
+    async resolve() {
+      return { name: 'Bilbo' };
     },
   })
   .mutation('createUser', {
