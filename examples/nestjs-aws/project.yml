@@ -1,0 +1,7 @@
+packages:
+  - name: api
+    functions:
+      - name: 'prod'
+        main: 'dist/index.main'
+        runtime: 'nodejs:14'
+        web: 'raw'
