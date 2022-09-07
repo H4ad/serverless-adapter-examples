@@ -1,11 +1,16 @@
 {
-  "name": "nestjs-digital-ocean",
+  "name": "nestjs-aws",
   "version": "1.0.0",
   "main": "dist/index.js",
   "author": "Vinícius Lourenço",
   "license": "MIT",
   "private": true,
-  "description": "Example project for NestJS and DigitalOcean",
+  "description": "Example project for NestJS and AWS",
+  "config": {
+    "aws_profile": "aws_liga",
+    "aws_region": "us-east-1",
+    "aws_lambda_name": "aws_liga_test_lambda"
+  },
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
@@ -20,9 +25,9 @@
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
-    "zip": "npx @h4ad/node-modules-packer ./ --include dist --output-path packages/api/prod",
-    "update-function": "doctl serverless deploy .",
-    "deploy": "npm run build && npm run zip && npm run update-function"
+    "zip": "npx @h4ad/node-modules-packer ./ --include dist",
+    "update-function-code": "aws --profile $npm_package_config_aws_profile --region $npm_package_config_aws_region lambda update-function-code --function-name $npm_package_config_aws_lambda_name --zip-file fileb://deploy.zip --publish --cli-connect-timeout 6000",
+    "deploy": "npm run build && npm run zip && npm run update-function-code"
   },
   "dependencies": {
     "@h4ad/serverless-adapter": "^2",
@@ -37,6 +42,7 @@
     "@nestjs/cli": "^9.0.0",
     "@nestjs/schematics": "^9.0.0",
     "@nestjs/testing": "^9.0.0",
+    "@types/aws-lambda": "^8.10.103",
     "@types/express": "^4.17.13",
     "@types/jest": "28.1.4",
     "@types/node": "^16.0.0",
