@@ -1,10 +1,11 @@
 {
   "name": "nestjs-digital-ocean",
-  "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "author": "Vinícius Lourenço",
+  "license": "MIT",
   "private": true,
-  "license": "UNLICENSED",
+  "description": "Example project for NestJS and DigitalOcean",
   "scripts": {
     "prebuild": "rimraf dist",
     "build": "nest build",
