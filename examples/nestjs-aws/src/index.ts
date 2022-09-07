@@ -21,7 +21,7 @@ export const handler = ServerlessAdapter.new(null)
   .setFramework(framework)
   .setHandler(new DefaultHandler())
   .setResolver(new PromiseResolver())
-  .setLogger(createDefaultLogger({ level: 'verbose' }))
+  .setLogger(createDefaultLogger({ level: 'warn' }))
   .addAdapter(new ApiGatewayV1Adapter())
   .addAdapter(new ApiGatewayV2Adapter())
   .build();

@@ -21,6 +21,6 @@ export const main = ServerlessAdapter.new(null)
   .setFramework(framework)
   .setHandler(new DigitalOceanHandler())
   .setResolver(new PromiseResolver())
-  .setLogger(createDefaultLogger({ level: 'verbose' }))
+  .setLogger(createDefaultLogger({ level: 'warn' }))
   .addAdapter(new HttpFunctionAdapter())
   .build();
