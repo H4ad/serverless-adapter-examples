@@ -14,6 +14,7 @@ async function bootstrap() {
   return app.getHttpAdapter().getInstance();
 }
 
+// to add support for fastify, just change this to FastifyFramework
 const express = new ExpressFramework();
 const framework = new LazyFramework(express, bootstrap);
 
