@@ -21,10 +21,12 @@
   "dependencies": {
     "@h4ad/serverless-adapter": "^2",
     "@trpc/server": "^9.27.0",
+    "cors": "^2.8.5",
     "zod": "^3.18.0"
   },
   "devDependencies": {
     "@types/aws-lambda": "^8.10.101",
+    "@types/cors": "^2.8.12",
     "nodemon": "^2.0.19",
     "rimraf": "^3.0.2",
     "ts-node": "^10.9.1",
