@@ -1,0 +1,43 @@
+{
+  "name": "apollo-server-aws",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "author": "Vinícius Lourenço",
+  "license": "MIT",
+  "description": "Example project for @apollo/server and AWS",
+  "config": {
+    "aws_profile": "aws_liga",
+    "aws_region": "us-east-1",
+    "aws_lambda_name": "aws_liga_test_lambda"
+  },
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "webpack -c webpack.config.mjs",
+    "start": "nodemon --exec 'node --experimental-specifier-resolution=node --loader ts-node/esm' src/run.ts",
+    "zip": "npx @h4ad/node-modules-packer ./ --include dist --ignore-node-path='' --include package.json",
+    "update-function-code": "aws --profile $npm_package_config_aws_profile --region $npm_package_config_aws_region lambda update-function-code --function-name $npm_package_config_aws_lambda_name --zip-file fileb://deploy.zip --publish --cli-connect-timeout 6000",
+    "deploy": "npm run build && npm run zip && npm run update-function-code"
+  },
+  "exports": "./dist/index.js",
+  "dependencies": {
+    "@apollo/server": "4.2.1",
+    "@h4ad/serverless-adapter": "^2.13.0",
+    "body-parser": "1.20.1",
+    "cors": "2.8.5"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/aws-lambda": "8.10.109",
+    "@types/body-parser": "1.19.2",
+    "@types/cors": "2.8.12",
+    "esbuild-loader": "^2.20.0",
+    "nodemon": "2.0.20",
+    "rimraf": "3.0.2",
+    "swc-loader": "0.2.3",
+    "ts-node": "10.9.1",
+    "typescript": "4.7.4",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0",
+    "webpack-node-externals": "^3.0.0"
+  }
+}

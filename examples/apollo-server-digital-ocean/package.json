@@ -1,0 +1,37 @@
+{
+  "name": "apollo-server-digital-ocean",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "author": "Vinícius Lourenço",
+  "license": "MIT",
+  "description": "Example project for @apollo/server and Digital Ocean",
+  "scripts": {
+    "prebuild": "rimraf dist",
+    "build": "webpack -c webpack.config.mjs",
+    "start": "nodemon --exec 'node --experimental-specifier-resolution=node --loader ts-node/esm' src/run.ts",
+    "zip": "npx @h4ad/node-modules-packer ./ --include dist --output-path packages/api/prod --include package.json",
+    "update-function": "doctl serverless deploy .",
+    "deploy": "npm run build && npm run zip && npm run update-function"
+  },
+  "exports": "./dist/index.js",
+  "dependencies": {
+    "@apollo/server": "4.2.1",
+    "@h4ad/serverless-adapter": "^2.13.0",
+    "body-parser": "1.20.1",
+    "cors": "2.8.5"
+  },
+  "type": "module",
+  "devDependencies": {
+    "@types/body-parser": "1.19.2",
+    "@types/cors": "2.8.12",
+    "esbuild-loader": "^2.20.0",
+    "nodemon": "2.0.20",
+    "rimraf": "3.0.2",
+    "swc-loader": "0.2.3",
+    "ts-node": "10.9.1",
+    "typescript": "4.7.4",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0",
+    "webpack-node-externals": "^3.0.0"
+  }
+}
