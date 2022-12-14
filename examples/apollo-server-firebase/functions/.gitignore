@@ -1,6 +1,7 @@
 # Compiled JavaScript files
 lib
 var
+dist
 
 *.log
 

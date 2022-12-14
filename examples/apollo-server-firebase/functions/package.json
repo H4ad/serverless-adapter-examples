@@ -7,11 +7,11 @@
   "description": "Example project for Apollo Server and Firebase",
   "scripts": {
     "build": "webpack -c webpack.config.mjs",
-    "serve:run": "firebase emulators:start --only functions --inspect-functions",
-    "serve": "npm run build && npm run serve:run",
-    "shell": "npm run build && firebase functions:shell",
+    "build:dev": "tsc -p tsconfig.json",
+    "serve": "firebase emulators:start --only functions --inspect-functions",
+    "shell": "npm run build:dev && firebase functions:shell",
     "start": "nodemon --exec 'node --experimental-specifier-resolution=node --loader ts-node/esm' src/run.ts",
-    "start:firebase": "npm run shell",
+    "start:firebase": "npm run build:dev && npm run serve",
     "deploy": "firebase deploy --only functions",
     "logs": "firebase functions:log"
   },
@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@apollo/server": "4.2.1",
-    "@h4ad/serverless-adapter": "^2.13.0",
+    "@h4ad/serverless-adapter": "2.13.1",
     "body-parser": "1.20.1",
     "cors": "2.8.5",
     "firebase-admin": "^10.0.2",
@@ -30,6 +30,7 @@
   "devDependencies": {
     "@types/body-parser": "1.19.2",
     "@types/cors": "2.8.12",
+    "@types/http-errors": "^2.0.1",
     "@typescript-eslint/eslint-plugin": "^5.12.0",
     "@typescript-eslint/parser": "^5.12.0",
     "esbuild-loader": "^2.20.0",
