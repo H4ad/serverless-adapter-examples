@@ -1,4 +1,4 @@
-import { BufferToJSObjectTransformer, TrpcAdapterContext, TrpcFrameworkOptions } from '@h4ad/serverless-adapter/lib/frameworks/trpc';
+import { TrpcAdapterContext, TrpcFrameworkOptions } from '@h4ad/serverless-adapter/lib/frameworks/trpc';
 import * as trpc from '@trpc/server';
 import { z } from 'zod';
 
@@ -7,7 +7,6 @@ export type TrpcContext = TrpcAdapterContext<CustomContext>;
 
 export const appRouter = trpc
   .router<TrpcContext>()
-  .transformer(new BufferToJSObjectTransformer())
   .query('getUser', {
     async resolve() {
       return { name: 'Bilbo' };
