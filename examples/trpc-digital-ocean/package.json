@@ -14,8 +14,8 @@
     "deploy": "npm run build && npm run zip && npm run update-function"
   },
   "dependencies": {
-    "@h4ad/serverless-adapter": "2.16.0",
-    "@trpc/server": "9.27.0",
+    "@h4ad/serverless-adapter": "3.0.0",
+    "@trpc/server": "10.29.1",
     "zod": "^3.18.0"
   },
   "devDependencies": {

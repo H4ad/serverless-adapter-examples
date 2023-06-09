@@ -6,9 +6,9 @@
   "license": "MIT",
   "description": "Example project for tRPC and AWS",
   "config": {
-    "aws_profile": "aws_liga",
-    "aws_region": "us-east-1",
-    "aws_lambda_name": "aws_liga_test_lambda"
+    "aws_profile": "aws_h4ad",
+    "aws_region": "sa-east-1",
+    "aws_lambda_name": "test"
   },
   "scripts": {
     "prebuild": "rimraf dist",
@@ -19,8 +19,8 @@
     "deploy": "npm run build && npm run zip && npm run update-function-code"
   },
   "dependencies": {
-    "@h4ad/serverless-adapter": "^2.16.0",
-    "@trpc/server": "^9.27.0",
+    "@h4ad/serverless-adapter": "3.0.0",
+    "@trpc/server": "^10.29.1",
     "body-parser": "^1.20.1",
     "cors": "^2.8.5",
     "zod": "^3.18.0"
